@@ -1,0 +1,12 @@
+.row {
+  display: flex;
+
+  &__image {
+    border: 1px solid #088178;
+    border-radius: 6px;
+  }
+}
+
+.image {
+  margin: 10px 0 15px 0;
+}

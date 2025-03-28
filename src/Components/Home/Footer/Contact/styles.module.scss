@@ -1,0 +1,23 @@
+.contact {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 20px;
+  flex-direction: column;
+
+  &__logo {
+    margin-bottom: 30px;
+  }
+
+  &__follow {
+    margin-top: 20px;
+
+    &__icon {
+      color: #465b52;
+      padding-right: 4px;
+      cursor: pointer;
+      &:hover {
+        color: #088178;
+      }
+    }
+  }
+}
