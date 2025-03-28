@@ -4,6 +4,7 @@ import { Feature } from "./Feature/Feature";
 import { FeaturedProducts } from "./FeaturedProducts/FeaturedProducts";
 import { Header } from "./Header/Header";
 import { NewArrivals } from "./NewArrivals/NewArrivals";
+import { SmBanners } from "./SmBanners/SmBanners";
 
 export const Home = () => {
   return (
@@ -14,6 +15,7 @@ export const Home = () => {
       <FeaturedProducts />
       <RepairServices />
       <NewArrivals />
+      <SmBanners />
     </>
   );
 };

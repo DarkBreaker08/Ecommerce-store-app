@@ -1,0 +1,59 @@
+.smBanners {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  &__Banner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    background-image: url("../../../assets/banner/b17.jpg");
+    min-width: 580px;
+    width: 48%;
+    height: 50vh;
+    background-size: cover;
+    background-position: center;
+    padding: 30px;
+  }
+
+  &__secondBanner {
+    background-image: url("../../../assets/banner/b10.jpg");
+  }
+
+  &__text {
+    color: white;
+    font-size: 20px;
+    font-weight: 300;
+  }
+
+  &__title {
+    color: white;
+    font-size: 28px;
+    font-weight: 800;
+  }
+
+  &__adv {
+    color: white;
+    font-size: 14px;
+    font-weight: 500;
+    padding-bottom: 15px;
+  }
+
+  &__button {
+    font-size: 13px;
+    font-weight: 600;
+    padding: 11px 18px;
+    color: #fff;
+    background-color: transparent;
+    border: 1px solid white;
+    cursor: pointer;
+    outline: none;
+    transition: 0.2s;
+  }
+
+  &__Banner:hover &__button {
+    background: #088178;
+    border: 1px solid #088178;
+  }
+}
