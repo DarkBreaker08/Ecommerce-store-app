@@ -6,7 +6,7 @@ import product5 from "../../../assets/products/f5.jpg";
 import product6 from "../../../assets/products/f6.jpg";
 import product7 from "../../../assets/products/f7.jpg";
 import product8 from "../../../assets/products/f8.jpg";
-import { Product } from "./Product/Product";
+import { Product } from "../../GeneralComponents/Product/Product";
 import styles from "./styles.module.scss";
 
 export const FeaturedProducts = () => {
