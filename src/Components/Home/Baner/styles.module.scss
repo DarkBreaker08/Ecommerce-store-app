@@ -1,0 +1,31 @@
+.baner {
+  background-image: url("../../../assets/hero4.png");
+  height: 90vh;
+  width: 100%;
+  background-size: cover;
+  background-position: top 25% right 0%;
+  padding: 0 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+
+  &__smallTitle {
+    padding-bottom: 15px;
+  }
+  &__bigTitle {
+    color: #088178;
+  }
+
+  &__shoppingButton {
+    background-image: url("../../../assets/button.png");
+    background-color: transparent;
+    color: #088178;
+    border: 0;
+    padding: 14px 80px 14px 65px;
+    cursor: pointer;
+    background-repeat: no-repeat;
+    font-weight: 700;
+    font-size: 15px;
+  }
+}
