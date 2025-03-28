@@ -1,31 +1,42 @@
 import { Link } from "@tanstack/react-router";
 import logo from "../../../assets/logo.png";
+import styles from "./styles.module.scss";
 
 export const Header = () => {
   return (
-    <section className="header">
+    <section className={styles.header}>
       <a href="#">
         <img src={logo} alt="shop logo" />
       </a>
 
-      <ul className="navbar">
-        <li>
-          <Link to=".">Home</Link>
+      <ul className={styles.header__navbar}>
+        <li className={styles.header__navbar__li}>
+          <Link to="." className={styles.header__navbar__li__link}>
+            Home
+          </Link>
         </li>
-        <li>
-          <Link to=".">Shop</Link>
+        <li className={styles.header__navbar__li}>
+          <Link to="." className={styles.header__navbar__li__link}>
+            Shop
+          </Link>
         </li>
-        <li>
-          <Link to=".">Blog</Link>
+        <li className={`${styles.header__navbar__li}`}>
+          <Link to="." className={`${styles.header__navbar__li__link}`}>
+            Blog
+          </Link>
         </li>
-        <li>
-          <Link to=".">About</Link>
+        <li className={styles.header__navbar__li}>
+          <Link to="." className={styles.header__navbar__li__link}>
+            About
+          </Link>
         </li>
-        <li>
-          <Link to=".">Contact</Link>
+        <li className={styles.header__navbar__li}>
+          <Link to="." className={styles.header__navbar__li__link}>
+            Contact
+          </Link>
         </li>
-        <li>
-          <Link to=".">
+        <li className={styles.header__navbar__li}>
+          <Link to="." className={styles.header__navbar__li__link}>
             <i className="far fa-shopping-bag"></i>
           </Link>
         </li>
