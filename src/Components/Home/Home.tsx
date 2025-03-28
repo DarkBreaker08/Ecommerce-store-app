@@ -1,3 +1,9 @@
+import { Header } from "./Header/Header";
+
 export const Home = () => {
-  return <></>;
+  return (
+    <>
+      <Header />
+    </>
+  );
 };
