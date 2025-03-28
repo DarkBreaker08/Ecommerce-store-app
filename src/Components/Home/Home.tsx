@@ -3,6 +3,7 @@ import { Baner } from "./Baner/Baner";
 import { Feature } from "./Feature/Feature";
 import { FeaturedProducts } from "./FeaturedProducts/FeaturedProducts";
 import { Header } from "./Header/Header";
+import { NewArrivals } from "./NewArrivals/NewArrivals";
 
 export const Home = () => {
   return (
@@ -12,6 +13,7 @@ export const Home = () => {
       <Feature />
       <FeaturedProducts />
       <RepairServices />
+      <NewArrivals />
     </>
   );
 };
