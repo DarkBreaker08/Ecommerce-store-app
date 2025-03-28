@@ -6,6 +6,7 @@ import { Header } from "./Header/Header";
 import { NewArrivals } from "./NewArrivals/NewArrivals";
 import { SmBanners } from "./SmBanners/SmBanners";
 import { AdvertisementBanners } from "./AdvertisementBanners/AdvertisementBanners";
+import { Newsletter } from "./Newsletter/Newsletter";
 
 export const Home = () => {
   return (
@@ -18,6 +19,7 @@ export const Home = () => {
       <NewArrivals />
       <SmBanners />
       <AdvertisementBanners />
+      <Newsletter />
     </>
   );
 };
