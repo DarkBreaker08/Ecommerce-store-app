@@ -41,6 +41,12 @@ export const Header = () => {
           </Link>
         </li>
       </ul>
+      <div className={`${styles.mobile}`} onClick={showMenu}>
+        <Link to="." className={styles.header__navbar__li__link}>
+          <i className="far fa-shopping-bag"></i>
+        </Link>
+        <i className="fas fa-outdent"></i>
+      </div>
     </section>
   );
 };
