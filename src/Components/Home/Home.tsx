@@ -1,3 +1,4 @@
+import { RepairServices } from "../RepairServices/RepairServices";
 import { Baner } from "./Baner/Baner";
 import { Feature } from "./Feature/Feature";
 import { FeaturedProducts } from "./FeaturedProducts/FeaturedProducts";
@@ -10,6 +11,7 @@ export const Home = () => {
       <Baner />
       <Feature />
       <FeaturedProducts />
+      <RepairServices />
     </>
   );
 };
