@@ -10,6 +10,10 @@
   align-items: flex-start;
   justify-content: center;
 
+  @media (max-width: 799px) {
+    background-position: top 30% right 30%;
+  }
+
   &__smallTitle {
     padding-bottom: 15px;
   }

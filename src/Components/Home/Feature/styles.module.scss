@@ -3,5 +3,9 @@
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
-  padding: 40px 80px;
+  padding: 40px 40px;
+
+  @media (max-width: 799px) {
+    justify-content: center;
+  }
 }
