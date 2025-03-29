@@ -10,6 +10,10 @@
   transition: 0.2s ease;
   position: relative;
 
+  @media (max-width: 799px) {
+    margin: 15px;
+  }
+
   &:hover {
     box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.06);
   }

@@ -2,10 +2,18 @@
   text-align: center;
   padding: 40px 80px;
 
+  @media (max-width: 799px) {
+    padding: 40px 40px;
+  }
+
   &__productsContainer {
     display: flex;
     justify-content: space-between;
     padding-top: 20px;
     flex-wrap: wrap;
+
+    @media (max-width: 799px) {
+      justify-content: center;
+    }
   }
 }
