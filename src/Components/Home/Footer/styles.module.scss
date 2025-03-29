@@ -33,4 +33,8 @@
 .copyright {
   text-align: center;
   margin: 40px 0;
+
+  @media (max-width: 477px) {
+    text-align: start;
+  }
 }

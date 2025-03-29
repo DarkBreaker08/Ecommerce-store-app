@@ -11,6 +11,11 @@
     margin: 15px 15px;
   }
 
+  @media (max-width: 477px) {
+    width: 155px;
+    margin: 0 0 15px 0;
+  }
+
   &:hover {
     box-shadow: 10px 10px 54px rgba(0, 0, 0, 0.1);
   }

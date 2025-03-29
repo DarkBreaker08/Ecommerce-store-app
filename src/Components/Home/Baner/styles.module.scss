@@ -14,11 +14,24 @@
     background-position: top 30% right 30%;
   }
 
+  @media (max-width: 477px) {
+    padding: 0 20px;
+    background-position: 55%;
+
+    h2 {
+      font-size: 32px;
+    }
+  }
+
   &__smallTitle {
     padding-bottom: 15px;
   }
   &__bigTitle {
     color: #088178;
+
+    @media (max-width: 477px) {
+      font-size: 38px;
+    }
   }
 
   &__shoppingButton {
