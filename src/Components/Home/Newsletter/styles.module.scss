@@ -30,6 +30,10 @@
     display: flex;
     width: 40%;
 
+    @media (max-width: 799px) {
+      width: 70%;
+    }
+
     &__input {
       height: 3.125rem;
       padding: 0 1.25em;
