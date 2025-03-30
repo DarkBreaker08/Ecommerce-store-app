@@ -4,8 +4,17 @@
   align-items: center;
   justify-content: space-between;
 
+  @media (max-width: 477px) {
+    flex-direction: column;
+  }
+
   &__detailsSection {
     width: 40%;
+
+    @media (max-width: 477px) {
+      width: 100%;
+      margin-bottom: 30px;
+    }
 
     &__text {
       font-size: 12px;
@@ -44,6 +53,10 @@
   &__map {
     width: 55%;
     height: 400px;
+
+    @media (max-width: 477px) {
+      width: 100%;
+    }
 
     iframe {
       width: 100%;
