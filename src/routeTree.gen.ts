@@ -14,6 +14,7 @@ import { Route as rootRoute } from './routes/__root'
 import { Route as ShopImport } from './routes/shop'
 import { Route as HomeImport } from './routes/home'
 import { Route as BlogImport } from './routes/blog'
+import { Route as AboutImport } from './routes/about'
 
 // Create/Update Routes
 
@@ -35,10 +36,23 @@ const BlogRoute = BlogImport.update({
   getParentRoute: () => rootRoute,
 } as any)
 
+const AboutRoute = AboutImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => rootRoute,
+} as any)
+
 // Populate the FileRoutesByPath interface
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutImport
+      parentRoute: typeof rootRoute
+    }
     '/blog': {
       id: '/blog'
       path: '/blog'
@@ -66,12 +80,14 @@ declare module '@tanstack/react-router' {
 // Create and export the route tree
 
 export interface FileRoutesByFullPath {
+  '/about': typeof AboutRoute
   '/blog': typeof BlogRoute
   '/home': typeof HomeRoute
   '/shop': typeof ShopRoute
 }
 
 export interface FileRoutesByTo {
+  '/about': typeof AboutRoute
   '/blog': typeof BlogRoute
   '/home': typeof HomeRoute
   '/shop': typeof ShopRoute
@@ -79,6 +95,7 @@ export interface FileRoutesByTo {
 
 export interface FileRoutesById {
   __root__: typeof rootRoute
+  '/about': typeof AboutRoute
   '/blog': typeof BlogRoute
   '/home': typeof HomeRoute
   '/shop': typeof ShopRoute
@@ -86,20 +103,22 @@ export interface FileRoutesById {
 
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/blog' | '/home' | '/shop'
+  fullPaths: '/about' | '/blog' | '/home' | '/shop'
   fileRoutesByTo: FileRoutesByTo
-  to: '/blog' | '/home' | '/shop'
-  id: '__root__' | '/blog' | '/home' | '/shop'
+  to: '/about' | '/blog' | '/home' | '/shop'
+  id: '__root__' | '/about' | '/blog' | '/home' | '/shop'
   fileRoutesById: FileRoutesById
 }
 
 export interface RootRouteChildren {
+  AboutRoute: typeof AboutRoute
   BlogRoute: typeof BlogRoute
   HomeRoute: typeof HomeRoute
   ShopRoute: typeof ShopRoute
 }
 
 const rootRouteChildren: RootRouteChildren = {
+  AboutRoute: AboutRoute,
   BlogRoute: BlogRoute,
   HomeRoute: HomeRoute,
   ShopRoute: ShopRoute,
@@ -115,10 +134,14 @@ export const routeTree = rootRoute
     "__root__": {
       "filePath": "__root.tsx",
       "children": [
+        "/about",
         "/blog",
         "/home",
         "/shop"
       ]
+    },
+    "/about": {
+      "filePath": "about.tsx"
     },
     "/blog": {
       "filePath": "blog.tsx"
