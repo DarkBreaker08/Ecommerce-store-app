@@ -13,6 +13,7 @@
 import { Route as rootRoute } from './routes/__root'
 import { Route as ShopImport } from './routes/shop'
 import { Route as HomeImport } from './routes/home'
+import { Route as ContactImport } from './routes/contact'
 import { Route as BlogImport } from './routes/blog'
 import { Route as AboutImport } from './routes/about'
 
@@ -27,6 +28,12 @@ const ShopRoute = ShopImport.update({
 const HomeRoute = HomeImport.update({
   id: '/home',
   path: '/home',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const ContactRoute = ContactImport.update({
+  id: '/contact',
+  path: '/contact',
   getParentRoute: () => rootRoute,
 } as any)
 
@@ -60,6 +67,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof BlogImport
       parentRoute: typeof rootRoute
     }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactImport
+      parentRoute: typeof rootRoute
+    }
     '/home': {
       id: '/home'
       path: '/home'
@@ -82,6 +96,7 @@ declare module '@tanstack/react-router' {
 export interface FileRoutesByFullPath {
   '/about': typeof AboutRoute
   '/blog': typeof BlogRoute
+  '/contact': typeof ContactRoute
   '/home': typeof HomeRoute
   '/shop': typeof ShopRoute
 }
@@ -89,6 +104,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/about': typeof AboutRoute
   '/blog': typeof BlogRoute
+  '/contact': typeof ContactRoute
   '/home': typeof HomeRoute
   '/shop': typeof ShopRoute
 }
@@ -97,22 +113,24 @@ export interface FileRoutesById {
   __root__: typeof rootRoute
   '/about': typeof AboutRoute
   '/blog': typeof BlogRoute
+  '/contact': typeof ContactRoute
   '/home': typeof HomeRoute
   '/shop': typeof ShopRoute
 }
 
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/about' | '/blog' | '/home' | '/shop'
+  fullPaths: '/about' | '/blog' | '/contact' | '/home' | '/shop'
   fileRoutesByTo: FileRoutesByTo
-  to: '/about' | '/blog' | '/home' | '/shop'
-  id: '__root__' | '/about' | '/blog' | '/home' | '/shop'
+  to: '/about' | '/blog' | '/contact' | '/home' | '/shop'
+  id: '__root__' | '/about' | '/blog' | '/contact' | '/home' | '/shop'
   fileRoutesById: FileRoutesById
 }
 
 export interface RootRouteChildren {
   AboutRoute: typeof AboutRoute
   BlogRoute: typeof BlogRoute
+  ContactRoute: typeof ContactRoute
   HomeRoute: typeof HomeRoute
   ShopRoute: typeof ShopRoute
 }
@@ -120,6 +138,7 @@ export interface RootRouteChildren {
 const rootRouteChildren: RootRouteChildren = {
   AboutRoute: AboutRoute,
   BlogRoute: BlogRoute,
+  ContactRoute: ContactRoute,
   HomeRoute: HomeRoute,
   ShopRoute: ShopRoute,
 }
@@ -136,6 +155,7 @@ export const routeTree = rootRoute
       "children": [
         "/about",
         "/blog",
+        "/contact",
         "/home",
         "/shop"
       ]
@@ -145,6 +165,9 @@ export const routeTree = rootRoute
     },
     "/blog": {
       "filePath": "blog.tsx"
+    },
+    "/contact": {
+      "filePath": "contact.tsx"
     },
     "/home": {
       "filePath": "home.tsx"
