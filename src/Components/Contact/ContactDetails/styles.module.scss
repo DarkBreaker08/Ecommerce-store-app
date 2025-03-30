@@ -1,0 +1,53 @@
+.contactDetails {
+  padding: 40px 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &__detailsSection {
+    width: 40%;
+
+    &__text {
+      font-size: 12px;
+    }
+
+    &__title {
+      font-size: 26px;
+      line-height: 35px;
+      padding: 20px 0;
+    }
+
+    &__h3 {
+      font-size: 16px;
+      padding-bottom: 15px;
+    }
+
+    &__locationListItems {
+      &__listItem {
+        list-style: none;
+        display: flex;
+        padding: 10px 0;
+
+        &__icon {
+          font-size: 14px;
+          padding-right: 22px;
+        }
+
+        &__paragraph {
+          margin: 0;
+          font-size: 14px;
+        }
+      }
+    }
+  }
+
+  &__map {
+    width: 55%;
+    height: 400px;
+
+    iframe {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
