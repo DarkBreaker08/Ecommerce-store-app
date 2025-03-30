@@ -1,0 +1,38 @@
+.aboutSection {
+  padding: 40px 80px;
+  display: flex;
+  align-items: center;
+
+  &__image {
+    width: 50%;
+    height: auto;
+  }
+
+  &__mainContainer {
+    padding-left: 40px;
+    width: 50%;
+  }
+
+  &__scrollingContainer {
+    background-color: #ccc;
+    width: 100%;
+    overflow: hidden; /* Ukrywa elementy wychodzące poza kontener */
+    box-sizing: border-box;
+    padding: 10px 0;
+
+    &__scrollingText {
+      white-space: nowrap; /* Zapobiega zawijaniu tekstu */
+      display: inline-block; /* Sprawia, że tekst będzie traktowany jako element liniowy */
+      animation: scrollText 10s linear infinite; /* Animacja przewijania */
+    }
+  }
+}
+
+@keyframes scrollText {
+  0% {
+    transform: translateX(200%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
