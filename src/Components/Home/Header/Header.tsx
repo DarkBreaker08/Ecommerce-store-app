@@ -26,12 +26,12 @@ export const Header = () => {
         style={isHamburgerActive ? { right: "0px" } : { right: "-300px" }}
       >
         <li className={styles.header__navbar__li}>
-          <Link to="." className={styles.header__navbar__li__link}>
+          <Link to=".." className={styles.header__navbar__li__link}>
             Home
           </Link>
         </li>
         <li className={styles.header__navbar__li}>
-          <Link to="." className={styles.header__navbar__li__link}>
+          <Link to="/shop" className={styles.header__navbar__li__link}>
             Shop
           </Link>
         </li>

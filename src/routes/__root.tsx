@@ -1,8 +1,12 @@
-import { createRootRoute, Outlet } from "@tanstack/react-router";
+import { createRootRoute } from "@tanstack/react-router";
 import { Home } from "../Components/Home/Home";
 
 const Root = () => {
-  return <Home />;
+  return (
+    <>
+      <Home />
+    </>
+  );
 };
 
 export const Route = createRootRoute({
