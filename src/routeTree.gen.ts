@@ -12,6 +12,7 @@
 
 import { Route as rootRoute } from './routes/__root'
 import { Route as ShopImport } from './routes/shop'
+import { Route as HomeImport } from './routes/home'
 
 // Create/Update Routes
 
@@ -21,10 +22,23 @@ const ShopRoute = ShopImport.update({
   getParentRoute: () => rootRoute,
 } as any)
 
+const HomeRoute = HomeImport.update({
+  id: '/home',
+  path: '/home',
+  getParentRoute: () => rootRoute,
+} as any)
+
 // Populate the FileRoutesByPath interface
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/home': {
+      id: '/home'
+      path: '/home'
+      fullPath: '/home'
+      preLoaderRoute: typeof HomeImport
+      parentRoute: typeof rootRoute
+    }
     '/shop': {
       id: '/shop'
       path: '/shop'
@@ -38,32 +52,37 @@ declare module '@tanstack/react-router' {
 // Create and export the route tree
 
 export interface FileRoutesByFullPath {
+  '/home': typeof HomeRoute
   '/shop': typeof ShopRoute
 }
 
 export interface FileRoutesByTo {
+  '/home': typeof HomeRoute
   '/shop': typeof ShopRoute
 }
 
 export interface FileRoutesById {
   __root__: typeof rootRoute
+  '/home': typeof HomeRoute
   '/shop': typeof ShopRoute
 }
 
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/shop'
+  fullPaths: '/home' | '/shop'
   fileRoutesByTo: FileRoutesByTo
-  to: '/shop'
-  id: '__root__' | '/shop'
+  to: '/home' | '/shop'
+  id: '__root__' | '/home' | '/shop'
   fileRoutesById: FileRoutesById
 }
 
 export interface RootRouteChildren {
+  HomeRoute: typeof HomeRoute
   ShopRoute: typeof ShopRoute
 }
 
 const rootRouteChildren: RootRouteChildren = {
+  HomeRoute: HomeRoute,
   ShopRoute: ShopRoute,
 }
 
@@ -77,8 +96,12 @@ export const routeTree = rootRoute
     "__root__": {
       "filePath": "__root.tsx",
       "children": [
+        "/home",
         "/shop"
       ]
+    },
+    "/home": {
+      "filePath": "home.tsx"
     },
     "/shop": {
       "filePath": "shop.tsx"

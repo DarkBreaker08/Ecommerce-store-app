@@ -1,3 +1,10 @@
+import { Header } from "../GeneralComponents/Header/Header";
+
 export const Shop = () => {
-  return <h1>Hello world!</h1>;
+  return (
+    <>
+      <Header />
+      <h2>sasdasd</h2>
+    </>
+  );
 };

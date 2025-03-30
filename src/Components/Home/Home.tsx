@@ -2,7 +2,7 @@ import { RepairServices } from "./RepairServices/RepairServices";
 import { Baner } from "./Baner/Baner";
 import { Feature } from "./Feature/Feature";
 import { FeaturedProducts } from "./FeaturedProducts/FeaturedProducts";
-import { Header } from "./Header/Header";
+import { Header } from "../GeneralComponents/Header/Header";
 import { NewArrivals } from "./NewArrivals/NewArrivals";
 import { SmBanners } from "./SmBanners/SmBanners";
 import { AdvertisementBanners } from "./AdvertisementBanners/AdvertisementBanners";

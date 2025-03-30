@@ -1,10 +1,9 @@
-import { createRootRoute } from "@tanstack/react-router";
-import { Home } from "../Components/Home/Home";
-
+import { createRootRoute, Navigate, Outlet } from "@tanstack/react-router";
 const Root = () => {
   return (
     <>
-      <Home />
+      <Navigate to="/home" />
+      <Outlet />
     </>
   );
 };
