@@ -3,6 +3,11 @@
   margin-top: 20px;
   padding: 40px 80px;
 
+  @media (max-width: 477px) {
+    display: flex;
+    flex-direction: column;
+  }
+
   img {
     width: 100%;
   }
@@ -10,6 +15,11 @@
   &__singleProductImg {
     width: 40%;
     margin-right: 50px;
+
+    @media (max-width: 477px) {
+      width: 100%;
+      margin-right: 0;
+    }
   }
 
   &__smallImagesGroup {
