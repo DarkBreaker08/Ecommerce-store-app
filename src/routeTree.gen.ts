@@ -13,6 +13,7 @@
 import { Route as rootRoute } from './routes/__root'
 import { Route as ShopImport } from './routes/shop'
 import { Route as HomeImport } from './routes/home'
+import { Route as BlogImport } from './routes/blog'
 
 // Create/Update Routes
 
@@ -28,10 +29,23 @@ const HomeRoute = HomeImport.update({
   getParentRoute: () => rootRoute,
 } as any)
 
+const BlogRoute = BlogImport.update({
+  id: '/blog',
+  path: '/blog',
+  getParentRoute: () => rootRoute,
+} as any)
+
 // Populate the FileRoutesByPath interface
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/blog': {
+      id: '/blog'
+      path: '/blog'
+      fullPath: '/blog'
+      preLoaderRoute: typeof BlogImport
+      parentRoute: typeof rootRoute
+    }
     '/home': {
       id: '/home'
       path: '/home'
@@ -52,36 +66,41 @@ declare module '@tanstack/react-router' {
 // Create and export the route tree
 
 export interface FileRoutesByFullPath {
+  '/blog': typeof BlogRoute
   '/home': typeof HomeRoute
   '/shop': typeof ShopRoute
 }
 
 export interface FileRoutesByTo {
+  '/blog': typeof BlogRoute
   '/home': typeof HomeRoute
   '/shop': typeof ShopRoute
 }
 
 export interface FileRoutesById {
   __root__: typeof rootRoute
+  '/blog': typeof BlogRoute
   '/home': typeof HomeRoute
   '/shop': typeof ShopRoute
 }
 
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/home' | '/shop'
+  fullPaths: '/blog' | '/home' | '/shop'
   fileRoutesByTo: FileRoutesByTo
-  to: '/home' | '/shop'
-  id: '__root__' | '/home' | '/shop'
+  to: '/blog' | '/home' | '/shop'
+  id: '__root__' | '/blog' | '/home' | '/shop'
   fileRoutesById: FileRoutesById
 }
 
 export interface RootRouteChildren {
+  BlogRoute: typeof BlogRoute
   HomeRoute: typeof HomeRoute
   ShopRoute: typeof ShopRoute
 }
 
 const rootRouteChildren: RootRouteChildren = {
+  BlogRoute: BlogRoute,
   HomeRoute: HomeRoute,
   ShopRoute: ShopRoute,
 }
@@ -96,9 +115,13 @@ export const routeTree = rootRoute
     "__root__": {
       "filePath": "__root.tsx",
       "children": [
+        "/blog",
         "/home",
         "/shop"
       ]
+    },
+    "/blog": {
+      "filePath": "blog.tsx"
     },
     "/home": {
       "filePath": "home.tsx"
