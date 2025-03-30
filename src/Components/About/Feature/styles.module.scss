@@ -1,0 +1,16 @@
+.feature {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 40px 90px;
+
+  @media (max-width: 799px) {
+    justify-content: center;
+  }
+
+  @media (max-width: 477px) {
+    padding: 20px;
+    justify-content: space-between;
+  }
+}
