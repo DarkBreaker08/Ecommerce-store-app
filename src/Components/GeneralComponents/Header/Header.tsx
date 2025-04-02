@@ -51,7 +51,7 @@ export const Header = () => {
           </Link>
         </li>
         <li className={styles.header__navbar__li}>
-          <Link to="." className={styles.header__navbar__li__link}>
+          <Link to="/cart" className={styles.header__navbar__li__link}>
             <i className="far fa-shopping-bag"></i>
           </Link>
         </li>

@@ -14,6 +14,7 @@ import { Route as rootRoute } from './routes/__root'
 import { Route as ShopImport } from './routes/shop'
 import { Route as HomeImport } from './routes/home'
 import { Route as ContactImport } from './routes/contact'
+import { Route as CartImport } from './routes/cart'
 import { Route as BlogImport } from './routes/blog'
 import { Route as AboutImport } from './routes/about'
 
@@ -34,6 +35,12 @@ const HomeRoute = HomeImport.update({
 const ContactRoute = ContactImport.update({
   id: '/contact',
   path: '/contact',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const CartRoute = CartImport.update({
+  id: '/cart',
+  path: '/cart',
   getParentRoute: () => rootRoute,
 } as any)
 
@@ -67,6 +74,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof BlogImport
       parentRoute: typeof rootRoute
     }
+    '/cart': {
+      id: '/cart'
+      path: '/cart'
+      fullPath: '/cart'
+      preLoaderRoute: typeof CartImport
+      parentRoute: typeof rootRoute
+    }
     '/contact': {
       id: '/contact'
       path: '/contact'
@@ -96,6 +110,7 @@ declare module '@tanstack/react-router' {
 export interface FileRoutesByFullPath {
   '/about': typeof AboutRoute
   '/blog': typeof BlogRoute
+  '/cart': typeof CartRoute
   '/contact': typeof ContactRoute
   '/home': typeof HomeRoute
   '/shop': typeof ShopRoute
@@ -104,6 +119,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/about': typeof AboutRoute
   '/blog': typeof BlogRoute
+  '/cart': typeof CartRoute
   '/contact': typeof ContactRoute
   '/home': typeof HomeRoute
   '/shop': typeof ShopRoute
@@ -113,6 +129,7 @@ export interface FileRoutesById {
   __root__: typeof rootRoute
   '/about': typeof AboutRoute
   '/blog': typeof BlogRoute
+  '/cart': typeof CartRoute
   '/contact': typeof ContactRoute
   '/home': typeof HomeRoute
   '/shop': typeof ShopRoute
@@ -120,16 +137,17 @@ export interface FileRoutesById {
 
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/about' | '/blog' | '/contact' | '/home' | '/shop'
+  fullPaths: '/about' | '/blog' | '/cart' | '/contact' | '/home' | '/shop'
   fileRoutesByTo: FileRoutesByTo
-  to: '/about' | '/blog' | '/contact' | '/home' | '/shop'
-  id: '__root__' | '/about' | '/blog' | '/contact' | '/home' | '/shop'
+  to: '/about' | '/blog' | '/cart' | '/contact' | '/home' | '/shop'
+  id: '__root__' | '/about' | '/blog' | '/cart' | '/contact' | '/home' | '/shop'
   fileRoutesById: FileRoutesById
 }
 
 export interface RootRouteChildren {
   AboutRoute: typeof AboutRoute
   BlogRoute: typeof BlogRoute
+  CartRoute: typeof CartRoute
   ContactRoute: typeof ContactRoute
   HomeRoute: typeof HomeRoute
   ShopRoute: typeof ShopRoute
@@ -138,6 +156,7 @@ export interface RootRouteChildren {
 const rootRouteChildren: RootRouteChildren = {
   AboutRoute: AboutRoute,
   BlogRoute: BlogRoute,
+  CartRoute: CartRoute,
   ContactRoute: ContactRoute,
   HomeRoute: HomeRoute,
   ShopRoute: ShopRoute,
@@ -155,6 +174,7 @@ export const routeTree = rootRoute
       "children": [
         "/about",
         "/blog",
+        "/cart",
         "/contact",
         "/home",
         "/shop"
@@ -165,6 +185,9 @@ export const routeTree = rootRoute
     },
     "/blog": {
       "filePath": "blog.tsx"
+    },
+    "/cart": {
+      "filePath": "cart.tsx"
     },
     "/contact": {
       "filePath": "contact.tsx"
