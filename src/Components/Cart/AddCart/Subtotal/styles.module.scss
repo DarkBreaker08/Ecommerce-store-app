@@ -4,6 +4,11 @@
   border: 1px solid #e2e9e1;
   padding: 30px;
 
+  @media (max-width: 477px) {
+    width: 100%;
+    padding: 20px;
+  }
+
   &__title {
     padding-bottom: 15px;
   }

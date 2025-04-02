@@ -2,6 +2,11 @@
   width: 50%;
   margin-bottom: 30px;
 
+  @media (max-width: 477px) {
+    width: 100%;
+    margin-bottom: 0;
+  }
+
   &__title {
     padding-bottom: 15px;
   }
