@@ -10,187 +10,187 @@
 
 // Import Routes
 
-import { Route as rootRoute } from "./routes/__root";
-import { Route as ShopImport } from "./routes/shop";
-import { Route as HomeImport } from "./routes/home";
-import { Route as FirstShopPageImport } from "./routes/firstShopPagege";
-import { Route as ContactImport } from "./routes/contact";
-import { Route as CartImport } from "./routes/cart";
-import { Route as BlogImport } from "./routes/blog";
-import { Route as AboutImport } from "./routes/about";
+import { Route as rootRoute } from './routes/__root'
+import { Route as ShopImport } from './routes/shop'
+import { Route as HomeImport } from './routes/home'
+import { Route as FirstShopPageImport } from './routes/firstShopPage'
+import { Route as ContactImport } from './routes/contact'
+import { Route as CartImport } from './routes/cart'
+import { Route as BlogImport } from './routes/blog'
+import { Route as AboutImport } from './routes/about'
 
 // Create/Update Routes
 
 const ShopRoute = ShopImport.update({
-  id: "/shop",
-  path: "/shop",
+  id: '/shop',
+  path: '/shop',
   getParentRoute: () => rootRoute,
-} as any);
+} as any)
 
 const HomeRoute = HomeImport.update({
-  id: "/home",
-  path: "/home",
+  id: '/home',
+  path: '/home',
   getParentRoute: () => rootRoute,
-} as any);
+} as any)
 
 const FirstShopPageRoute = FirstShopPageImport.update({
-  id: "/firstShopPage",
-  path: "/firstShopPage",
+  id: '/firstShopPage',
+  path: '/firstShopPage',
   getParentRoute: () => rootRoute,
-} as any);
+} as any)
 
 const ContactRoute = ContactImport.update({
-  id: "/contact",
-  path: "/contact",
+  id: '/contact',
+  path: '/contact',
   getParentRoute: () => rootRoute,
-} as any);
+} as any)
 
 const CartRoute = CartImport.update({
-  id: "/cart",
-  path: "/cart",
+  id: '/cart',
+  path: '/cart',
   getParentRoute: () => rootRoute,
-} as any);
+} as any)
 
 const BlogRoute = BlogImport.update({
-  id: "/blog",
-  path: "/blog",
+  id: '/blog',
+  path: '/blog',
   getParentRoute: () => rootRoute,
-} as any);
+} as any)
 
 const AboutRoute = AboutImport.update({
-  id: "/about",
-  path: "/about",
+  id: '/about',
+  path: '/about',
   getParentRoute: () => rootRoute,
-} as any);
+} as any)
 
 // Populate the FileRoutesByPath interface
 
-declare module "@tanstack/react-router" {
+declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    "/about": {
-      id: "/about";
-      path: "/about";
-      fullPath: "/about";
-      preLoaderRoute: typeof AboutImport;
-      parentRoute: typeof rootRoute;
-    };
-    "/blog": {
-      id: "/blog";
-      path: "/blog";
-      fullPath: "/blog";
-      preLoaderRoute: typeof BlogImport;
-      parentRoute: typeof rootRoute;
-    };
-    "/cart": {
-      id: "/cart";
-      path: "/cart";
-      fullPath: "/cart";
-      preLoaderRoute: typeof CartImport;
-      parentRoute: typeof rootRoute;
-    };
-    "/contact": {
-      id: "/contact";
-      path: "/contact";
-      fullPath: "/contact";
-      preLoaderRoute: typeof ContactImport;
-      parentRoute: typeof rootRoute;
-    };
-    "/firstShopPage": {
-      id: "/firstShopPage";
-      path: "/firstShopPage";
-      fullPath: "/firstShopPage";
-      preLoaderRoute: typeof FirstShopPageImport;
-      parentRoute: typeof rootRoute;
-    };
-    "/home": {
-      id: "/home";
-      path: "/home";
-      fullPath: "/home";
-      preLoaderRoute: typeof HomeImport;
-      parentRoute: typeof rootRoute;
-    };
-    "/shop": {
-      id: "/shop";
-      path: "/shop";
-      fullPath: "/shop";
-      preLoaderRoute: typeof ShopImport;
-      parentRoute: typeof rootRoute;
-    };
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutImport
+      parentRoute: typeof rootRoute
+    }
+    '/blog': {
+      id: '/blog'
+      path: '/blog'
+      fullPath: '/blog'
+      preLoaderRoute: typeof BlogImport
+      parentRoute: typeof rootRoute
+    }
+    '/cart': {
+      id: '/cart'
+      path: '/cart'
+      fullPath: '/cart'
+      preLoaderRoute: typeof CartImport
+      parentRoute: typeof rootRoute
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactImport
+      parentRoute: typeof rootRoute
+    }
+    '/firstShopPage': {
+      id: '/firstShopPage'
+      path: '/firstShopPage'
+      fullPath: '/firstShopPage'
+      preLoaderRoute: typeof FirstShopPageImport
+      parentRoute: typeof rootRoute
+    }
+    '/home': {
+      id: '/home'
+      path: '/home'
+      fullPath: '/home'
+      preLoaderRoute: typeof HomeImport
+      parentRoute: typeof rootRoute
+    }
+    '/shop': {
+      id: '/shop'
+      path: '/shop'
+      fullPath: '/shop'
+      preLoaderRoute: typeof ShopImport
+      parentRoute: typeof rootRoute
+    }
   }
 }
 
 // Create and export the route tree
 
 export interface FileRoutesByFullPath {
-  "/about": typeof AboutRoute;
-  "/blog": typeof BlogRoute;
-  "/cart": typeof CartRoute;
-  "/contact": typeof ContactRoute;
-  "/firstShopPage": typeof FirstShopPageRoute;
-  "/home": typeof HomeRoute;
-  "/shop": typeof ShopRoute;
+  '/about': typeof AboutRoute
+  '/blog': typeof BlogRoute
+  '/cart': typeof CartRoute
+  '/contact': typeof ContactRoute
+  '/firstShopPage': typeof FirstShopPageRoute
+  '/home': typeof HomeRoute
+  '/shop': typeof ShopRoute
 }
 
 export interface FileRoutesByTo {
-  "/about": typeof AboutRoute;
-  "/blog": typeof BlogRoute;
-  "/cart": typeof CartRoute;
-  "/contact": typeof ContactRoute;
-  "/firstShopPage": typeof FirstShopPageRoute;
-  "/home": typeof HomeRoute;
-  "/shop": typeof ShopRoute;
+  '/about': typeof AboutRoute
+  '/blog': typeof BlogRoute
+  '/cart': typeof CartRoute
+  '/contact': typeof ContactRoute
+  '/firstShopPage': typeof FirstShopPageRoute
+  '/home': typeof HomeRoute
+  '/shop': typeof ShopRoute
 }
 
 export interface FileRoutesById {
-  __root__: typeof rootRoute;
-  "/about": typeof AboutRoute;
-  "/blog": typeof BlogRoute;
-  "/cart": typeof CartRoute;
-  "/contact": typeof ContactRoute;
-  "/firstShopPage": typeof FirstShopPageRoute;
-  "/home": typeof HomeRoute;
-  "/shop": typeof ShopRoute;
+  __root__: typeof rootRoute
+  '/about': typeof AboutRoute
+  '/blog': typeof BlogRoute
+  '/cart': typeof CartRoute
+  '/contact': typeof ContactRoute
+  '/firstShopPage': typeof FirstShopPageRoute
+  '/home': typeof HomeRoute
+  '/shop': typeof ShopRoute
 }
 
 export interface FileRouteTypes {
-  fileRoutesByFullPath: FileRoutesByFullPath;
+  fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
-    | "/about"
-    | "/blog"
-    | "/cart"
-    | "/contact"
-    | "/firstShopPage"
-    | "/home"
-    | "/shop";
-  fileRoutesByTo: FileRoutesByTo;
+    | '/about'
+    | '/blog'
+    | '/cart'
+    | '/contact'
+    | '/firstShopPage'
+    | '/home'
+    | '/shop'
+  fileRoutesByTo: FileRoutesByTo
   to:
-    | "/about"
-    | "/blog"
-    | "/cart"
-    | "/contact"
-    | "/firstShopPage"
-    | "/home"
-    | "/shop";
+    | '/about'
+    | '/blog'
+    | '/cart'
+    | '/contact'
+    | '/firstShopPage'
+    | '/home'
+    | '/shop'
   id:
-    | "__root__"
-    | "/about"
-    | "/blog"
-    | "/cart"
-    | "/contact"
-    | "/firstShopPage"
-    | "/home"
-    | "/shop";
-  fileRoutesById: FileRoutesById;
+    | '__root__'
+    | '/about'
+    | '/blog'
+    | '/cart'
+    | '/contact'
+    | '/firstShopPage'
+    | '/home'
+    | '/shop'
+  fileRoutesById: FileRoutesById
 }
 
 export interface RootRouteChildren {
-  AboutRoute: typeof AboutRoute;
-  BlogRoute: typeof BlogRoute;
-  CartRoute: typeof CartRoute;
-  ContactRoute: typeof ContactRoute;
-  FirstShopPageRoute: typeof FirstShopPageRoute;
-  HomeRoute: typeof HomeRoute;
-  ShopRoute: typeof ShopRoute;
+  AboutRoute: typeof AboutRoute
+  BlogRoute: typeof BlogRoute
+  CartRoute: typeof CartRoute
+  ContactRoute: typeof ContactRoute
+  FirstShopPageRoute: typeof FirstShopPageRoute
+  HomeRoute: typeof HomeRoute
+  ShopRoute: typeof ShopRoute
 }
 
 const rootRouteChildren: RootRouteChildren = {
@@ -201,11 +201,11 @@ const rootRouteChildren: RootRouteChildren = {
   FirstShopPageRoute: FirstShopPageRoute,
   HomeRoute: HomeRoute,
   ShopRoute: ShopRoute,
-};
+}
 
 export const routeTree = rootRoute
   ._addFileChildren(rootRouteChildren)
-  ._addFileTypes<FileRouteTypes>();
+  ._addFileTypes<FileRouteTypes>()
 
 /* ROUTE_MANIFEST_START
 {

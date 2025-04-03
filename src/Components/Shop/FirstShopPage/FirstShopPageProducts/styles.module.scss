@@ -6,6 +6,11 @@
     padding: 40px 40px;
   }
 
+  &__title {
+    font-weight: 300;
+    padding: 40px 80px;
+  }
+
   &__productsContainer {
     display: flex;
     justify-content: space-between;

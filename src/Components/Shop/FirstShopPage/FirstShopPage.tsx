@@ -8,7 +8,6 @@ import { FirstShopPageProducts } from "./FirstShopPageProducts/FirstShopPageProd
 export const FirstShopPage = () => {
   return (
     <>
-      <h1>This is First Page of pagination menu!</h1>
       <Header />
       <PageHeader />
       <FirstShopPageProducts />

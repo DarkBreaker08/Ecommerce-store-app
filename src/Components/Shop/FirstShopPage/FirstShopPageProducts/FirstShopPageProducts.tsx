@@ -26,22 +26,27 @@ export const FirstShopPageProducts = () => {
 
   return (
     <section className={styles.featuredProducts}>
-      <Product2 imgSource={product12} productObject={products[11]} />
-      <Product2 imgSource={product14} productObject={products[13]} />
-      <Product2 imgSource={product13} productObject={products[12]} />
-      <Product2 imgSource={product11} productObject={products[10]} />
-      <Product2 imgSource={product10} productObject={products[9]} />
-      <Product2 imgSource={product9} productObject={products[8]} />
-      <Product2 imgSource={product8} productObject={products[7]} />
-      <Product2 imgSource={product7} productObject={products[6]} />
-      <Product2 imgSource={product6} productObject={products[5]} />
-      <Product2 imgSource={product5} productObject={products[4]} />
-      <Product2 imgSource={product4} productObject={products[3]} />
-      <Product2 imgSource={product3} productObject={products[2]} />
-      <Product2 imgSource={product2} productObject={products[1]} />
-      <Product2 imgSource={product1} productObject={products[0]} />
-      <Product2 imgSource={product15} productObject={products[14]} />
-      <Product2 imgSource={product16} productObject={products[15]} />
+      <h2 className={styles.featuredProducts__title}>
+        This is the First Shop Page!
+      </h2>
+      <div className={styles.featuredProducts__productsContainer}>
+        <Product2 imgSource={product12} productObject={products[11]} />
+        <Product2 imgSource={product14} productObject={products[13]} />
+        <Product2 imgSource={product13} productObject={products[12]} />
+        <Product2 imgSource={product11} productObject={products[10]} />
+        <Product2 imgSource={product10} productObject={products[9]} />
+        <Product2 imgSource={product9} productObject={products[8]} />
+        <Product2 imgSource={product8} productObject={products[7]} />
+        <Product2 imgSource={product7} productObject={products[6]} />
+        <Product2 imgSource={product6} productObject={products[5]} />
+        <Product2 imgSource={product5} productObject={products[4]} />
+        <Product2 imgSource={product4} productObject={products[3]} />
+        <Product2 imgSource={product3} productObject={products[2]} />
+        <Product2 imgSource={product2} productObject={products[1]} />
+        <Product2 imgSource={product1} productObject={products[0]} />
+        <Product2 imgSource={product15} productObject={products[14]} />
+        <Product2 imgSource={product16} productObject={products[15]} />
+      </div>
     </section>
   );
 };
