@@ -15,7 +15,7 @@ export const Pagination = ({ first, second }: PaginationProps) => {
       <Link to={second} className={styles.pagination__link}>
         2
       </Link>
-      <Link to="." className={styles.pagination__link}>
+      <Link to="/home" className={styles.pagination__link}>
         <i
           className={`fal fa-long-arrow-alt-right ${styles.pagination__arrow_icon}`}
         ></i>

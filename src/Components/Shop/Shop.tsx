@@ -11,7 +11,7 @@ export const Shop = () => {
       <Header />
       <PageHeader />
       <Products />
-      <Pagination first="/firstShopPage" second="." />
+      <Pagination first="/firstShopPage" second="/secondShopPage" />
       <Newsletter />
       <Footer />
     </>

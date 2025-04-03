@@ -3,15 +3,15 @@ import { Header } from "../../GeneralComponents/Header/Header";
 import { Newsletter } from "../../GeneralComponents/Newsletter/Newsletter";
 import { Pagination } from "../../GeneralComponents/Pagination/Pagination";
 import { PageHeader } from "../PageHeader/PageHeader";
-import { FirstShopPageProducts } from "./FirstShopPageProducts/FirstShopPageProducts";
+import { SecondShopPageProducts } from "./SecondShopProducts/SecondShopProducts";
 
-export const FirstShopPage = () => {
+export const SecondShopPage = () => {
   return (
     <>
       <Header />
       <PageHeader />
-      <FirstShopPageProducts />
-      <Pagination first="." second="/secondShopPage" />
+      <SecondShopPageProducts />
+      <Pagination first="/firstShopPage" second="." />
       <Newsletter />
       <Footer />
     </>
