@@ -6,3 +6,12 @@ export type Product = {
 };
 
 export type Products = Product[];
+
+export type Contact = {
+  address: string;
+  phone: string;
+  openHours: string;
+  officeAdress: string;
+  email: string;
+  officeHours: string;
+};
