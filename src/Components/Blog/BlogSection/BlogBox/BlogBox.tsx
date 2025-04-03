@@ -1,24 +1,20 @@
+import { Blog } from "../../../../types";
 import styles from "./styles.module.scss";
 
 type BlogBoxProps = {
   imageSource: string;
-  blogTitle: string;
+  blogObj: Blog;
 };
 
-export const BlogBox = ({ blogTitle, imageSource }: BlogBoxProps) => {
+export const BlogBox = ({ blogObj, imageSource }: BlogBoxProps) => {
   return (
     <div className={styles.blog__box}>
       <div className={styles.blog__image}>
         <img src={imageSource} alt="blog image" />
       </div>
       <div className={styles.blog__details}>
-        <h4>{blogTitle}</h4>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa
-          obcaecati dolorum sequi dolor repellendus ab accusantium possimus,
-          commodi quis distinctio eveniet alias natus ad corrupti! Architecto
-          obcaecati commodi maxime necessitatibus.
-        </p>
+        <h4>{blogObj.title}</h4>
+        <p>{blogObj.text}</p>
         <a href="#" className={styles.blog__button}>
           CONTINUE READING
         </a>
