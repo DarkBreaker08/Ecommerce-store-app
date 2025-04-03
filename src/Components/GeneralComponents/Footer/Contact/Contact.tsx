@@ -1,19 +1,25 @@
+import { Navigate } from "@tanstack/react-router";
 import logo from "../../../../assets/logo.png";
+import { useGetContactQuery } from "../../../../queries/useGetContactQuery";
 import styles from "./styles.module.scss";
 
 export const Contact = () => {
+  const { data: contact } = useGetContactQuery();
+
+  if (!contact) return <Navigate to="." />;
+
   return (
     <div className={styles.contact}>
       <img className={styles.contact__logo} src={logo} alt="logo" />
       <h4>Contact</h4>
       <p>
-        <strong>Address:</strong> 562 Wellington Road, Street 32, San Francisco
+        <strong>Address:</strong> {contact.address}
       </p>
       <p>
-        <strong>Phone:</strong> +01 2222 365 /(+91) 01 2345 6789
+        <strong>Phone:</strong> {contact.phone}
       </p>
       <p>
-        <strong>Hours:</strong> 10:00 - 18:00, Mon - Sat
+        <strong>Hours:</strong> {contact.openHours}
       </p>
       <div className={styles.contact__follow}>
         <h4>Follow us</h4>
