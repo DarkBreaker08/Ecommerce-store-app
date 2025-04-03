@@ -11,7 +11,7 @@ export const Blog = () => {
       <Header />
       <BlogHeader />
       <BlogSection />
-      <Pagination first="/firstBlogPage" second="." />
+      <Pagination first="/firstBlogPage" second="/secondBlogPage" />
       <Newsletter />
       <Footer />
     </>

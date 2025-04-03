@@ -13,6 +13,7 @@
 import { Route as rootRoute } from './routes/__root'
 import { Route as ShopImport } from './routes/shop'
 import { Route as SecondShopPageImport } from './routes/secondShopPage'
+import { Route as SecondBlogPageImport } from './routes/secondBlogPage'
 import { Route as HomeImport } from './routes/home'
 import { Route as FirstShopPageImport } from './routes/firstShopPage'
 import { Route as FirstBlogPageImport } from './routes/firstBlogPage'
@@ -32,6 +33,12 @@ const ShopRoute = ShopImport.update({
 const SecondShopPageRoute = SecondShopPageImport.update({
   id: '/secondShopPage',
   path: '/secondShopPage',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const SecondBlogPageRoute = SecondBlogPageImport.update({
+  id: '/secondBlogPage',
+  path: '/secondBlogPage',
   getParentRoute: () => rootRoute,
 } as any)
 
@@ -130,6 +137,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof HomeImport
       parentRoute: typeof rootRoute
     }
+    '/secondBlogPage': {
+      id: '/secondBlogPage'
+      path: '/secondBlogPage'
+      fullPath: '/secondBlogPage'
+      preLoaderRoute: typeof SecondBlogPageImport
+      parentRoute: typeof rootRoute
+    }
     '/secondShopPage': {
       id: '/secondShopPage'
       path: '/secondShopPage'
@@ -157,6 +171,7 @@ export interface FileRoutesByFullPath {
   '/firstBlogPage': typeof FirstBlogPageRoute
   '/firstShopPage': typeof FirstShopPageRoute
   '/home': typeof HomeRoute
+  '/secondBlogPage': typeof SecondBlogPageRoute
   '/secondShopPage': typeof SecondShopPageRoute
   '/shop': typeof ShopRoute
 }
@@ -169,6 +184,7 @@ export interface FileRoutesByTo {
   '/firstBlogPage': typeof FirstBlogPageRoute
   '/firstShopPage': typeof FirstShopPageRoute
   '/home': typeof HomeRoute
+  '/secondBlogPage': typeof SecondBlogPageRoute
   '/secondShopPage': typeof SecondShopPageRoute
   '/shop': typeof ShopRoute
 }
@@ -182,6 +198,7 @@ export interface FileRoutesById {
   '/firstBlogPage': typeof FirstBlogPageRoute
   '/firstShopPage': typeof FirstShopPageRoute
   '/home': typeof HomeRoute
+  '/secondBlogPage': typeof SecondBlogPageRoute
   '/secondShopPage': typeof SecondShopPageRoute
   '/shop': typeof ShopRoute
 }
@@ -196,6 +213,7 @@ export interface FileRouteTypes {
     | '/firstBlogPage'
     | '/firstShopPage'
     | '/home'
+    | '/secondBlogPage'
     | '/secondShopPage'
     | '/shop'
   fileRoutesByTo: FileRoutesByTo
@@ -207,6 +225,7 @@ export interface FileRouteTypes {
     | '/firstBlogPage'
     | '/firstShopPage'
     | '/home'
+    | '/secondBlogPage'
     | '/secondShopPage'
     | '/shop'
   id:
@@ -218,6 +237,7 @@ export interface FileRouteTypes {
     | '/firstBlogPage'
     | '/firstShopPage'
     | '/home'
+    | '/secondBlogPage'
     | '/secondShopPage'
     | '/shop'
   fileRoutesById: FileRoutesById
@@ -231,6 +251,7 @@ export interface RootRouteChildren {
   FirstBlogPageRoute: typeof FirstBlogPageRoute
   FirstShopPageRoute: typeof FirstShopPageRoute
   HomeRoute: typeof HomeRoute
+  SecondBlogPageRoute: typeof SecondBlogPageRoute
   SecondShopPageRoute: typeof SecondShopPageRoute
   ShopRoute: typeof ShopRoute
 }
@@ -243,6 +264,7 @@ const rootRouteChildren: RootRouteChildren = {
   FirstBlogPageRoute: FirstBlogPageRoute,
   FirstShopPageRoute: FirstShopPageRoute,
   HomeRoute: HomeRoute,
+  SecondBlogPageRoute: SecondBlogPageRoute,
   SecondShopPageRoute: SecondShopPageRoute,
   ShopRoute: ShopRoute,
 }
@@ -264,6 +286,7 @@ export const routeTree = rootRoute
         "/firstBlogPage",
         "/firstShopPage",
         "/home",
+        "/secondBlogPage",
         "/secondShopPage",
         "/shop"
       ]
@@ -288,6 +311,9 @@ export const routeTree = rootRoute
     },
     "/home": {
       "filePath": "home.tsx"
+    },
+    "/secondBlogPage": {
+      "filePath": "secondBlogPage.tsx"
     },
     "/secondShopPage": {
       "filePath": "secondShopPage.tsx"
