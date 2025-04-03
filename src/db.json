@@ -97,7 +97,12 @@
       "price": "$12.84"
     }
   ],
-  "customersEmails": [],
+  "customersEmails": [
+    {
+      "id": "cc50",
+      "email": "sw@wp.pl"
+    }
+  ],
   "customersOpinions": [],
   "contact": {
     "address": "562 Wellington Road, Street 32, San Francisco",
