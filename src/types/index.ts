@@ -15,3 +15,10 @@ export type Contact = {
   email: string;
   officeHours: string;
 };
+
+export type UserEmail = {
+  email: string;
+  id: string;
+};
+
+export type UserEmailDto = Omit<UserEmail, "id">;
