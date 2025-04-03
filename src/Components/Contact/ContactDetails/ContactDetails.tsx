@@ -1,6 +1,12 @@
+import { Navigate } from "@tanstack/react-router";
+import { useGetContactQuery } from "../../../queries/useGetContactQuery";
 import styles from "./styles.module.scss";
 
 export const ContactDetails = () => {
+  const { data: contactData } = useGetContactQuery();
+
+  if (!contactData) return <Navigate to="." />;
+
   return (
     <section className={styles.contactDetails}>
       <div className={styles.contactDetails__detailsSection}>
@@ -29,7 +35,7 @@ export const ContactDetails = () => {
                 styles.contactDetails__detailsSection__locationListItems__listItem__paragraph
               }
             >
-              56 Glassford Street Glasgow G1 1UL New York
+              {contactData.officeAdress}
             </p>
           </li>
           <li
@@ -45,7 +51,7 @@ export const ContactDetails = () => {
                 styles.contactDetails__detailsSection__locationListItems__listItem__paragraph
               }
             >
-              contact@example.com
+              {contactData.email}
             </p>
           </li>
           <li
@@ -61,7 +67,7 @@ export const ContactDetails = () => {
                 styles.contactDetails__detailsSection__locationListItems__listItem__paragraph
               }
             >
-              contact@example.com
+              {contactData.email}
             </p>
           </li>
           <li
@@ -77,7 +83,7 @@ export const ContactDetails = () => {
                 styles.contactDetails__detailsSection__locationListItems__listItem__paragraph
               }
             >
-              9:00am to 16.pm
+              {contactData.officeHours}
             </p>
           </li>
         </div>
