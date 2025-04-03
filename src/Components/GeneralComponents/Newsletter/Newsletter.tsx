@@ -1,6 +1,13 @@
+import { useForm } from "react-hook-form";
+import { useCreateConsumerEmailQuery } from "../../../queries/useCreateConsumerEmailQuery";
 import styles from "./styles.module.scss";
 
 export const Newsletter = () => {
+  const { mutate } = useCreateConsumerEmailQuery();
+  const {} = useForm({
+    // resolver: yupResolver
+  });
+
   return (
     <section className={styles.newsletter}>
       <div>
