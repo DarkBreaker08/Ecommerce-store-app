@@ -5,9 +5,12 @@ import person3 from "../../../assets/people/3.png";
 import styles from "./styles.module.scss";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { clientMessageSchema } from "../../../validation";
-import { CustomerOpinion } from "../../../types";
+import { CustomerOpinionDto } from "../../../types";
+import { useCreateConsumerOpionionQuery } from "../../../queries/useCreateConsumerOpionionQuery";
 
 export const FormDetails = () => {
+  const { mutate } = useCreateConsumerOpionionQuery();
+
   const {
     register,
     handleSubmit,
@@ -16,8 +19,8 @@ export const FormDetails = () => {
     resolver: yupResolver(clientMessageSchema),
   });
 
-  const onSubmit = (data: CustomerOpinion) => {
-    console.log(data);
+  const onSubmit = (data: CustomerOpinionDto) => {
+    mutate(data);
   };
 
   return (

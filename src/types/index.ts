@@ -36,4 +36,7 @@ export type CustomerOpinion = {
   email: string;
   subject: string;
   message: string;
+  id: string;
 };
+
+export type CustomerOpinionDto = Omit<CustomerOpinion, "id">;

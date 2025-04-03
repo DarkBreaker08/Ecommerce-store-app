@@ -124,14 +124,21 @@
       "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa obcaecati dolorum sequi dolor repellendus ab accusantium possimus, commodi quis distinctio eveniet alias natus ad corrupti! Architecto obcaecati commodi maxime necessitatibus."
     }
   ],
-
   "customersEmails": [
     {
       "id": "cc50",
       "email": "sw@wp.pl"
     }
   ],
-  "customersOpinions": [],
+  "customersOpinions": [
+    {
+      "id": "0a9b",
+      "name": "Londyn232133124",
+      "email": "sw@wp.pl",
+      "subject": "dasdasdasdasdasdsa",
+      "message": "sdaaaaaaaadasssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss"
+    }
+  ],
   "contact": {
     "address": "562 Wellington Road, Street 32, San Francisco",
     "phone": "+01 2222 365 /(+91) 01 2345 6789",
