@@ -4,113 +4,97 @@
       "id": "aeg",
       "name": "Product A",
       "brand": "addidas",
-      "price": "$123.76",
-      "img": "../../../assets/products/f1.jpg"
+      "price": "$123.76"
     },
     {
       "id": "2aeg",
       "name": "Product B",
       "brand": "addidas",
-      "price": "$154.87",
-      "img": "../../../assets/products/f2.jpg"
+      "price": "$154.87"
     },
     {
       "id": "3aeg",
       "name": "Product C",
       "brand": "addidas",
-      "price": "$203.32",
-      "img": "../../../assets/products/f3.jpg"
+      "price": "$203.32"
     },
     {
       "id": "4aeg",
       "name": "Product D",
       "brand": "addidas",
-      "price": "$109.23",
-      "img": "../../../assets/products/f4.jpg"
+      "price": "$109.23"
     },
     {
       "id": "5aeg",
       "name": "Product E",
       "brand": "addidas",
-      "price": "$762.87",
-      "img": "../../../assets/products/f5.jpg"
+      "price": "$762.87"
     },
     {
       "id": "6aeg",
       "name": "Product F",
       "brand": "addidas",
-      "price": "$243.09",
-      "img": "../../../assets/products/f6.jpg"
+      "price": "$243.09"
     },
     {
       "id": "7aeg",
       "name": "Product G",
       "brand": "addidas",
-      "price": "$67.32",
-      "img": "../../../assets/products/f7.jpg"
+      "price": "$67.32"
     },
     {
       "id": "8aeg",
       "name": "Product H",
       "brand": "addidas",
-      "price": "$12.84",
-      "img": "../../../assets/products/f8.jpg"
+      "price": "$12.84"
     },
     {
       "id": "9aeg",
       "name": "Product I",
       "brand": "addidas",
-      "price": "$123.76",
-      "img": "../../../assets/products/n1.jpg"
+      "price": "$123.76"
     },
     {
       "id": "10aeg",
       "name": "Product J",
       "brand": "addidas",
-      "price": "$154.87",
-      "img": "../../../assets/products/n2.jpg"
+      "price": "$154.87"
     },
     {
       "id": "11aeg",
       "name": "Product K",
       "brand": "addidas",
-      "price": "$203.32",
-      "img": "../../../assets/products/n3.jpg"
+      "price": "$203.32"
     },
     {
       "id": "12aeg",
       "name": "Product L",
       "brand": "addidas",
-      "price": "$109.23",
-      "img": "../../../assets/products/n4.jpg"
+      "price": "$109.23"
     },
     {
       "id": "13aeg",
       "name": "Product M",
       "brand": "addidas",
-      "price": "$762.87",
-      "img": "../../../assets/products/n5.jpg"
+      "price": "$762.87"
     },
     {
       "id": "14aeg",
       "name": "Product N",
       "brand": "addidas",
-      "price": "$243.09",
-      "img": "../../../assets/products/n6.jpg"
+      "price": "$243.09"
     },
     {
       "id": "15aeg",
       "name": "Product O",
       "brand": "addidas",
-      "price": "$67.32",
-      "img": "../../../assets/products/n7.jpg"
+      "price": "$67.32"
     },
     {
       "id": "16aeg",
       "name": "Product P",
       "brand": "addidas",
-      "price": "$12.84",
-      "img": "../../../assets/products/n8.jpg"
+      "price": "$12.84"
     }
   ],
   "customersEmails": [],

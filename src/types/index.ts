@@ -1,7 +1,8 @@
-export type Products = {
+export type Product = {
   id: string;
   name: string;
   brand: string;
   price: string;
-  img: string;
-}[];
+};
+
+export type Products = Product[];
