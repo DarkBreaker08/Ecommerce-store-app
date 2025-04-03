@@ -22,3 +22,9 @@ export type UserEmail = {
 };
 
 export type UserEmailDto = Omit<UserEmail, "id">;
+
+export type Blogs = {
+  id: string;
+  title: string;
+  text: string;
+};

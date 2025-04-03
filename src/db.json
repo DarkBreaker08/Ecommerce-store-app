@@ -97,6 +97,34 @@
       "price": "$12.84"
     }
   ],
+  "blogs": [
+    {
+      "id": "1",
+      "title": "The Cotton-Jersey Zip-Up Hoodie",
+      "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa obcaecati dolorum sequi dolor repellendus ab accusantium possimus, commodi quis distinctio eveniet alias natus ad corrupti! Architecto obcaecati commodi maxime necessitatibus."
+    },
+    {
+      "id": "2",
+      "title": "How to Style a Quiff",
+      "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa obcaecati dolorum sequi dolor repellendus ab accusantium possimus, commodi quis distinctio eveniet alias natus ad corrupti! Architecto obcaecati commodi maxime necessitatibus."
+    },
+    {
+      "id": "3",
+      "title": "Must-Have Skater Girl Items",
+      "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa obcaecati dolorum sequi dolor repellendus ab accusantium possimus, commodi quis distinctio eveniet alias natus ad corrupti! Architecto obcaecati commodi maxime necessitatibus."
+    },
+    {
+      "id": "4",
+      "title": "Runway-Inspited Trends",
+      "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa obcaecati dolorum sequi dolor repellendus ab accusantium possimus, commodi quis distinctio eveniet alias natus ad corrupti! Architecto obcaecati commodi maxime necessitatibus."
+    },
+    {
+      "id": "5",
+      "title": "AW20 Menswear Trends",
+      "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa obcaecati dolorum sequi dolor repellendus ab accusantium possimus, commodi quis distinctio eveniet alias natus ad corrupti! Architecto obcaecati commodi maxime necessitatibus."
+    }
+  ],
+
   "customersEmails": [
     {
       "id": "cc50",
