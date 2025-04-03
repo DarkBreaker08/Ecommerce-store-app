@@ -30,3 +30,10 @@ export type Blog = {
 };
 
 export type Blogs = Blog[];
+
+export type CustomerOpinion = {
+  name: string;
+  email: string;
+  subject: string;
+  message: string;
+};
