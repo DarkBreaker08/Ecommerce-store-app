@@ -3,7 +3,7 @@ const API_BASE = `http://localhost:3000/`;
 export const useApi = () => {
   const call = async <R, P = {}>(
     url: string,
-    method: "GET" | "DELETE" | "POST",
+    method: "GET" | "DELETE" | "POST" | "PUT",
     body?: P
   ) => {
     const commonData = {
@@ -40,9 +40,13 @@ export const useApi = () => {
     return await call<R, P>(url, "POST", payload);
   };
 
+  const apiPut = async <R, P>(url: string, payload: P) => {
+    return await call<R, P>(url, "PUT", payload);
+  };
+
   const apiDelete = async <R>(url: string) => {
     return await call<R>(url, "DELETE");
   };
 
-  return { apiGet, apiPost, apiDelete };
+  return { apiGet, apiPost, apiDelete, apiPut };
 };
