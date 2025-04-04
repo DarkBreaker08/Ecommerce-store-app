@@ -23,10 +23,16 @@ type CartProductProps = {
   name: string;
   price: string;
   id: string;
+  numberOfUnits: number;
 };
 
-export const CartProduct = ({ name, price, id }: CartProductProps) => {
-  const [quantity, setQuantity] = useState<number>(1);
+export const CartProduct = ({
+  name,
+  price,
+  id,
+  numberOfUnits,
+}: CartProductProps) => {
+  const [quantity, setQuantity] = useState<number>(numberOfUnits);
   const { remove } = useDeleteCartProductQuery();
   const { mutate } = useModifyCartProductQuery(id);
 

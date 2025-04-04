@@ -24,6 +24,7 @@ export const CartList = () => {
         <tbody className={styles.cartlist__table__body}>
           {data.map((product) => (
             <CartProduct
+              numberOfUnits={product.quantity!}
               name={product.name}
               price={product.price}
               key={product.id}
