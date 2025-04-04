@@ -1,3 +1,4 @@
+import { useCreateCartProductQuery } from "../../../queries/useCreateCartProductQuery";
 import { Product as ProductObj } from "../../../types";
 import styles from "./styles.module.scss";
 
@@ -7,6 +8,12 @@ type ProductProps = {
 };
 
 export const Product2 = ({ productObject, imgSource }: ProductProps) => {
+  const { mutate } = useCreateCartProductQuery();
+
+  const addProductToCart = () => {
+    mutate(productObject);
+  };
+
   return (
     <div className={styles.product}>
       <img className={styles.product__image} src={imgSource} alt="" />
@@ -28,8 +35,11 @@ export const Product2 = ({ productObject, imgSource }: ProductProps) => {
           {productObject.price}
         </h4>
       </div>
-      <a href="#">
-        <i className={`${styles.product__cart} fal fa-shopping-cart cart`}></i>
+      <a>
+        <i
+          className={`${styles.product__cart} fal fa-shopping-cart cart`}
+          onClick={addProductToCart}
+        ></i>
       </a>
     </div>
   );

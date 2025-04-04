@@ -147,5 +147,24 @@
     "email": "contact@example.com",
     "officeHours": "9:00am to 16.pm"
   },
-  "cartProducts": []
+  "cartProducts": [
+    {
+      "id": "aeg",
+      "name": "Product A",
+      "brand": "addidas",
+      "price": "$123.76"
+    },
+    {
+      "id": "2aeg",
+      "name": "Product B",
+      "brand": "addidas",
+      "price": "$154.87"
+    },
+    {
+      "id": "12aeg",
+      "name": "Product L",
+      "brand": "addidas",
+      "price": "$109.23"
+    }
+  ]
 }

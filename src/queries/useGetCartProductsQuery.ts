@@ -12,4 +12,6 @@ export const useGetCartProductsQuery = () => {
     },
     staleTime: 30000,
   });
+
+  return { data };
 };
