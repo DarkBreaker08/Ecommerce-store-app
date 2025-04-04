@@ -13,7 +13,7 @@ export const Product2 = ({ productObject, imgSource }: ProductProps) => {
   const { mutate } = useCreateCartProductQuery();
   const { data } = useGetCartProductsQuery();
 
-  if (!data) return <Navigate to="." />;
+  if (!data) return <Navigate to="/globalError" />;
 
   const addProductToCart = () => {
     productObject.quantity = 1;

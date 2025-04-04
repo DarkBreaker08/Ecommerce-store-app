@@ -6,7 +6,7 @@ import styles from "./styles.module.scss";
 export const Contact = () => {
   const { data: contact } = useGetContactQuery();
 
-  if (!contact) return <Navigate to="." />;
+  if (!contact) return <Navigate to="/globalError" />;
 
   return (
     <div className={styles.contact}>

@@ -5,7 +5,7 @@ import styles from "./styles.module.scss";
 export const Subtotal = () => {
   const { data } = useGetCartProductsQuery();
 
-  if (!data) return <Navigate to="." />;
+  if (!data) return <Navigate to="/globalError" />;
 
   const getTotalPrice = () => {
     let totalPrice = 0;

@@ -6,7 +6,7 @@ import styles from "./styles.module.scss";
 export const CartList = () => {
   const { data } = useGetCartProductsQuery();
   console.log(data);
-  if (!data) return <Navigate to="." />;
+  if (!data) return <Navigate to="/globalError" />;
 
   return (
     <section className={styles.cartlist}>

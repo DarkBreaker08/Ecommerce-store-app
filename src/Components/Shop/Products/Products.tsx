@@ -7,7 +7,7 @@ import styles from "./styles.module.scss";
 export const Products = () => {
   const { data: products } = useGetProductsQuery();
 
-  if (!products) return <Navigate to=".." />;
+  if (!products) return <Navigate to="/globalError" />;
 
   return (
     <section className={styles.featuredProducts}>

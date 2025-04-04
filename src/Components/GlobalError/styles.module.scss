@@ -1,0 +1,9 @@
+.errorTitle {
+  text-align: center;
+  margin: 30vh;
+
+  @media (max-width: 799px) {
+    margin: 15vh;
+    font-size: 25px;
+  }
+}

@@ -14,7 +14,7 @@ import { Navigate } from "@tanstack/react-router";
 export const NewArrivals = () => {
   const { data: products } = useGetProductsQuery();
 
-  if (!products) return <Navigate to="." />;
+  if (!products) return <Navigate to="/globalError" />;
 
   return (
     <section className={styles.newArrivals}>

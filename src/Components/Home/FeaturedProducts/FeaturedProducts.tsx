@@ -14,7 +14,7 @@ import { Product2 } from "../../GeneralComponents/Product/Product2";
 export const FeaturedProducts = () => {
   const { data: products } = useGetProductsQuery();
 
-  if (!products) return <Navigate to="." />;
+  if (!products) return <Navigate to="/globalError" />;
 
   return (
     <section className={styles.featuredProducts}>

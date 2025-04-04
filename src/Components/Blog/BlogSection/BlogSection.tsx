@@ -11,7 +11,7 @@ import { Navigate } from "@tanstack/react-router";
 export const BlogSection = () => {
   const { data: blogs } = useGetBlogsQuery();
 
-  if (!blogs) return <Navigate to="." />;
+  if (!blogs) return <Navigate to="/globalError" />;
 
   return (
     <section className={styles.blog}>

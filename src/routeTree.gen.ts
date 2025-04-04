@@ -15,6 +15,7 @@ import { Route as ShopImport } from './routes/shop'
 import { Route as SecondShopPageImport } from './routes/secondShopPage'
 import { Route as SecondBlogPageImport } from './routes/secondBlogPage'
 import { Route as HomeImport } from './routes/home'
+import { Route as GlobalErrorImport } from './routes/globalError'
 import { Route as FirstShopPageImport } from './routes/firstShopPage'
 import { Route as FirstBlogPageImport } from './routes/firstBlogPage'
 import { Route as ContactImport } from './routes/contact'
@@ -45,6 +46,12 @@ const SecondBlogPageRoute = SecondBlogPageImport.update({
 const HomeRoute = HomeImport.update({
   id: '/home',
   path: '/home',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const GlobalErrorRoute = GlobalErrorImport.update({
+  id: '/globalError',
+  path: '/globalError',
   getParentRoute: () => rootRoute,
 } as any)
 
@@ -130,6 +137,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof FirstShopPageImport
       parentRoute: typeof rootRoute
     }
+    '/globalError': {
+      id: '/globalError'
+      path: '/globalError'
+      fullPath: '/globalError'
+      preLoaderRoute: typeof GlobalErrorImport
+      parentRoute: typeof rootRoute
+    }
     '/home': {
       id: '/home'
       path: '/home'
@@ -170,6 +184,7 @@ export interface FileRoutesByFullPath {
   '/contact': typeof ContactRoute
   '/firstBlogPage': typeof FirstBlogPageRoute
   '/firstShopPage': typeof FirstShopPageRoute
+  '/globalError': typeof GlobalErrorRoute
   '/home': typeof HomeRoute
   '/secondBlogPage': typeof SecondBlogPageRoute
   '/secondShopPage': typeof SecondShopPageRoute
@@ -183,6 +198,7 @@ export interface FileRoutesByTo {
   '/contact': typeof ContactRoute
   '/firstBlogPage': typeof FirstBlogPageRoute
   '/firstShopPage': typeof FirstShopPageRoute
+  '/globalError': typeof GlobalErrorRoute
   '/home': typeof HomeRoute
   '/secondBlogPage': typeof SecondBlogPageRoute
   '/secondShopPage': typeof SecondShopPageRoute
@@ -197,6 +213,7 @@ export interface FileRoutesById {
   '/contact': typeof ContactRoute
   '/firstBlogPage': typeof FirstBlogPageRoute
   '/firstShopPage': typeof FirstShopPageRoute
+  '/globalError': typeof GlobalErrorRoute
   '/home': typeof HomeRoute
   '/secondBlogPage': typeof SecondBlogPageRoute
   '/secondShopPage': typeof SecondShopPageRoute
@@ -212,6 +229,7 @@ export interface FileRouteTypes {
     | '/contact'
     | '/firstBlogPage'
     | '/firstShopPage'
+    | '/globalError'
     | '/home'
     | '/secondBlogPage'
     | '/secondShopPage'
@@ -224,6 +242,7 @@ export interface FileRouteTypes {
     | '/contact'
     | '/firstBlogPage'
     | '/firstShopPage'
+    | '/globalError'
     | '/home'
     | '/secondBlogPage'
     | '/secondShopPage'
@@ -236,6 +255,7 @@ export interface FileRouteTypes {
     | '/contact'
     | '/firstBlogPage'
     | '/firstShopPage'
+    | '/globalError'
     | '/home'
     | '/secondBlogPage'
     | '/secondShopPage'
@@ -250,6 +270,7 @@ export interface RootRouteChildren {
   ContactRoute: typeof ContactRoute
   FirstBlogPageRoute: typeof FirstBlogPageRoute
   FirstShopPageRoute: typeof FirstShopPageRoute
+  GlobalErrorRoute: typeof GlobalErrorRoute
   HomeRoute: typeof HomeRoute
   SecondBlogPageRoute: typeof SecondBlogPageRoute
   SecondShopPageRoute: typeof SecondShopPageRoute
@@ -263,6 +284,7 @@ const rootRouteChildren: RootRouteChildren = {
   ContactRoute: ContactRoute,
   FirstBlogPageRoute: FirstBlogPageRoute,
   FirstShopPageRoute: FirstShopPageRoute,
+  GlobalErrorRoute: GlobalErrorRoute,
   HomeRoute: HomeRoute,
   SecondBlogPageRoute: SecondBlogPageRoute,
   SecondShopPageRoute: SecondShopPageRoute,
@@ -285,6 +307,7 @@ export const routeTree = rootRoute
         "/contact",
         "/firstBlogPage",
         "/firstShopPage",
+        "/globalError",
         "/home",
         "/secondBlogPage",
         "/secondShopPage",
@@ -308,6 +331,9 @@ export const routeTree = rootRoute
     },
     "/firstShopPage": {
       "filePath": "firstShopPage.tsx"
+    },
+    "/globalError": {
+      "filePath": "globalError.tsx"
     },
     "/home": {
       "filePath": "home.tsx"
