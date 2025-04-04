@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import { useApi } from "../hooks/useApi";
-import { Product } from "../types";
+import { Products } from "../types";
 
 export const useGetCartProductsQuery = () => {
   const { apiGet } = useApi();
@@ -8,7 +8,7 @@ export const useGetCartProductsQuery = () => {
   const { data } = useQuery({
     queryKey: ["cart-product"],
     queryFn: async () => {
-      return apiGet<Product>("cartProducts");
+      return apiGet<Products>("cartProducts");
     },
     staleTime: 30000,
   });

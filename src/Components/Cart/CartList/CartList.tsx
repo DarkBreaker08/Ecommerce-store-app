@@ -1,8 +1,13 @@
-import img1 from "../../../assets/products/f1.jpg";
+import { Navigate } from "@tanstack/react-router";
+import { useGetCartProductsQuery } from "../../../queries/useGetCartProductsQuery";
 import { CartProduct } from "./CartProduct/CartProduct";
 import styles from "./styles.module.scss";
 
 export const CartList = () => {
+  const { data } = useGetCartProductsQuery();
+  console.log(data);
+  if (!data) return <Navigate to="." />;
+
   return (
     <section className={styles.cartlist}>
       <table width={`100%`} className={styles.cartlist__table}>
@@ -17,13 +22,13 @@ export const CartList = () => {
           </tr>
         </thead>
         <tbody className={styles.cartlist__table__body}>
-          <CartProduct
-            image={img1}
-            name="Cartoon Astronaut T-Shirt"
-            quantity={1}
-            price={"$118.99"}
-            total={"$118.99"}
-          />
+          {data.map((product) => (
+            <CartProduct
+              name={product.name}
+              price={product.price}
+              key={product.id}
+            />
+          ))}
         </tbody>
       </table>
     </section>

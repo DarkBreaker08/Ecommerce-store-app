@@ -1,4 +1,6 @@
+import { Navigate } from "@tanstack/react-router";
 import { useCreateCartProductQuery } from "../../../queries/useCreateCartProductQuery";
+import { useGetCartProductsQuery } from "../../../queries/useGetCartProductsQuery";
 import { Product as ProductObj } from "../../../types";
 import styles from "./styles.module.scss";
 
@@ -9,9 +11,17 @@ type ProductProps = {
 
 export const Product2 = ({ productObject, imgSource }: ProductProps) => {
   const { mutate } = useCreateCartProductQuery();
+  const { data } = useGetCartProductsQuery();
+
+  if (!data) return <Navigate to="." />;
 
   const addProductToCart = () => {
-    mutate(productObject);
+    if (
+      data.filter((productEntity) => productEntity.name === productObject.name)
+        .length == 1
+    )
+      return alert("This product is already in your cart!");
+    else return mutate(productObject);
   };
 
   return (
