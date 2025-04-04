@@ -5,6 +5,8 @@ export type Product = {
   price: string;
 };
 
+export type ProductDto = Omit<Product, "id">;
+
 export type Products = Product[];
 
 export type Contact = {
