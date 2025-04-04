@@ -16,6 +16,7 @@ export const Product2 = ({ productObject, imgSource }: ProductProps) => {
   if (!data) return <Navigate to="." />;
 
   const addProductToCart = () => {
+    productObject.quantity = 1;
     if (
       data.filter((productEntity) => productEntity.name === productObject.name)
         .length == 1

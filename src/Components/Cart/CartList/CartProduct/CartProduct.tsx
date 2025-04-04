@@ -17,16 +17,18 @@ import img15 from "../../../../assets/products/n7.jpg";
 import img16 from "../../../../assets/products/n8.jpg";
 import styles from "./styles.module.scss";
 import { useDeleteCartProductQuery } from "../../../../queries/useDeleteCartProductQuery";
+import { useModifyCartProductQuery } from "../../../../queries/useModifyCartProductQuery";
 
 type CartProductProps = {
   name: string;
-  price: string | number;
+  price: string;
   id: string;
 };
 
 export const CartProduct = ({ name, price, id }: CartProductProps) => {
   const [quantity, setQuantity] = useState<number>(1);
   const { remove } = useDeleteCartProductQuery();
+  const { mutate } = useModifyCartProductQuery(id);
 
   const getProperImage = () => {
     switch (name) {
@@ -71,6 +73,12 @@ export const CartProduct = ({ name, price, id }: CartProductProps) => {
     const value = Number(e.target.value);
     if (value < 1) return;
     setQuantity(value);
+    mutate({
+      price,
+      name,
+      brand: "addidas",
+      quantity: value,
+    });
   };
 
   const handleRemoveProduct = () => {

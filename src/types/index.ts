@@ -3,6 +3,7 @@ export type Product = {
   name: string;
   brand: string;
   price: string;
+  quantity?: number;
 };
 
 export type ProductDto = Omit<Product, "id">;

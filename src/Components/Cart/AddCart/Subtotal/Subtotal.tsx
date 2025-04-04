@@ -1,13 +1,31 @@
+import { Navigate } from "@tanstack/react-router";
+import { useGetCartProductsQuery } from "../../../../queries/useGetCartProductsQuery";
 import styles from "./styles.module.scss";
 
 export const Subtotal = () => {
+  const { data } = useGetCartProductsQuery();
+
+  if (!data) return <Navigate to="." />;
+
+  const getTotalPrice = () => {
+    let totalPrice = 0;
+
+    data.forEach((product) => {
+      const price = Number(product.price.replace("$", ""));
+
+      totalPrice += price * product.quantity!;
+    });
+
+    return totalPrice;
+  };
+
   return (
     <div className={styles.subtotal}>
       <h3 className={styles.subtotal__title}>Cart Totals</h3>
       <table className={styles.subtotal__table}>
         <tr>
           <td>Cart Subtotal</td>
-          <td>$ 335</td>
+          <td>$ {getTotalPrice()}</td>
         </tr>
         <tr>
           <td>Shipping</td>
@@ -18,7 +36,7 @@ export const Subtotal = () => {
             <strong>Total</strong>
           </td>
           <td>
-            <strong>$ 335</strong>
+            <strong>$ {getTotalPrice()}</strong>
           </td>
         </tr>
       </table>
