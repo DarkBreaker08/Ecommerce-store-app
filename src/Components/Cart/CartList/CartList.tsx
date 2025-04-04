@@ -27,6 +27,7 @@ export const CartList = () => {
               name={product.name}
               price={product.price}
               key={product.id}
+              id={product.id}
             />
           ))}
         </tbody>

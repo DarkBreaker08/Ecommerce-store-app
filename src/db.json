@@ -147,12 +147,5 @@
     "email": "contact@example.com",
     "officeHours": "9:00am to 16.pm"
   },
-  "cartProducts": [
-    {
-      "id": "aeg",
-      "name": "Product A",
-      "brand": "addidas",
-      "price": "$123.76"
-    }
-  ]
+  "cartProducts": []
 }

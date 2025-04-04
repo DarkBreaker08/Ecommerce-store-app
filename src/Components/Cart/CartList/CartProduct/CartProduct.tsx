@@ -16,14 +16,17 @@ import img14 from "../../../../assets/products/n6.jpg";
 import img15 from "../../../../assets/products/n7.jpg";
 import img16 from "../../../../assets/products/n8.jpg";
 import styles from "./styles.module.scss";
+import { useDeleteCartProductQuery } from "../../../../queries/useDeleteCartProductQuery";
 
 type CartProductProps = {
   name: string;
   price: string | number;
+  id: string;
 };
 
-export const CartProduct = ({ name, price }: CartProductProps) => {
+export const CartProduct = ({ name, price, id }: CartProductProps) => {
   const [quantity, setQuantity] = useState<number>(1);
+  const { remove } = useDeleteCartProductQuery();
 
   const getProperImage = () => {
     switch (name) {
@@ -70,11 +73,18 @@ export const CartProduct = ({ name, price }: CartProductProps) => {
     setQuantity(value);
   };
 
+  const handleRemoveProduct = () => {
+    remove(id);
+  };
+
   return (
     <tr>
       <td>
         <a href="#">
-          <i className={`far fa-times-circle`}></i>
+          <i
+            className={`far fa-times-circle`}
+            onClick={handleRemoveProduct}
+          ></i>
         </a>
       </td>
       <td>
