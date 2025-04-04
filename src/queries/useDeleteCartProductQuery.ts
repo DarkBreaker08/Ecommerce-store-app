@@ -1,5 +1,6 @@
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { useApi } from "../hooks/useApi";
+import { Product } from "../types";
 
 export const useDeleteCartProductQuery = () => {
   const { apiDelete } = useApi();
@@ -8,7 +9,7 @@ export const useDeleteCartProductQuery = () => {
   const { mutate: remove } = useMutation({
     mutationKey: ["cart-product", "delete"],
     mutationFn: async (id: string) => {
-      return apiDelete(`cartProducts/${id}`);
+      return apiDelete<Product>(`cartProducts/${id}`);
     },
     onSuccess: () => {
       queryClient.invalidateQueries({
