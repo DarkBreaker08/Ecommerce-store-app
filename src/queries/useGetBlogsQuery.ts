@@ -5,7 +5,7 @@ import { Blogs } from "../types";
 export const useGetBlogsQuery = () => {
   const { apiGet } = useApi();
 
-  const { data } = useQuery({
+  const { data, isLoading } = useQuery({
     queryKey: ["blog", "blog-post"],
     queryFn: async () => {
       return apiGet<Blogs>("blogs");
@@ -13,5 +13,5 @@ export const useGetBlogsQuery = () => {
     staleTime: 30000,
   });
 
-  return { data };
+  return { data, isLoading };
 };

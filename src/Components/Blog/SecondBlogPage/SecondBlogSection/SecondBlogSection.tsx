@@ -7,11 +7,13 @@ import blog5 from "../../../../assets/blog/b5.jpg";
 import { BlogBox } from "../../BlogSection/BlogBox/BlogBox";
 import { useGetBlogsQuery } from "../../../../queries/useGetBlogsQuery";
 import { Navigate } from "@tanstack/react-router";
+import { GlobalError } from "../../../GlobalError/GlobalError";
 
 export const SecondBlogSection = () => {
-  const { data: blogs } = useGetBlogsQuery();
+  const { data: blogs, isLoading } = useGetBlogsQuery();
 
-  if (!blogs) return <Navigate to="/globalError" />;
+  if (!blogs && !isLoading) return <GlobalError />;
+  if (!blogs) return <Navigate to="." />;
 
   return (
     <section className={styles.blog}>

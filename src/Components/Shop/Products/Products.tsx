@@ -3,11 +3,13 @@ import { useGetProductsQuery } from "../../../queries/useGetProductsQuery";
 import { FirstProductsColumn } from "./FirstProductsColumn";
 import { SecondProductsColumn } from "./SecondProductsColumn";
 import styles from "./styles.module.scss";
+import { GlobalError } from "../../GlobalError/GlobalError";
 
 export const Products = () => {
-  const { data: products } = useGetProductsQuery();
+  const { data: products, isLoading } = useGetProductsQuery();
 
-  if (!products) return <Navigate to="/globalError" />;
+  if (!products && !isLoading) return <GlobalError />;
+  if (!products) return <Navigate to="." />;
 
   return (
     <section className={styles.featuredProducts}>

@@ -1,11 +1,13 @@
 import { Navigate } from "@tanstack/react-router";
 import { useGetContactQuery } from "../../../queries/useGetContactQuery";
 import styles from "./styles.module.scss";
+import { GlobalError } from "../../GlobalError/GlobalError";
 
 export const ContactDetails = () => {
-  const { data: contactData } = useGetContactQuery();
+  const { data: contactData, isLoading } = useGetContactQuery();
 
-  if (!contactData) return <Navigate to="/globalError" />;
+  if (!contactData && !isLoading) return <GlobalError />;
+  if (!contactData) return <Navigate to="." />;
 
   return (
     <section className={styles.contactDetails}>

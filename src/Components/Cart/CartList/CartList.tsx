@@ -2,10 +2,12 @@ import { Navigate } from "@tanstack/react-router";
 import { useGetCartProductsQuery } from "../../../queries/useGetCartProductsQuery";
 import { CartProduct } from "./CartProduct/CartProduct";
 import styles from "./styles.module.scss";
+import { GlobalError } from "../../GlobalError/GlobalError";
 
 export const CartList = () => {
-  const { data } = useGetCartProductsQuery();
-  if (!data) return <Navigate to="/globalError" />;
+  const { data, isLoading } = useGetCartProductsQuery();
+  if (!data && !isLoading) return <GlobalError />;
+  if (!data) return <Navigate to="." />;
 
   return (
     <section className={styles.cartlist}>

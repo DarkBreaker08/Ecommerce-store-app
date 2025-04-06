@@ -10,11 +10,13 @@ import product8 from "../../../assets/products/f8.jpg";
 import { useGetProductsQuery } from "../../../queries/useGetProductsQuery";
 import styles from "./styles.module.scss";
 import { Product2 } from "../../GeneralComponents/Product/Product2";
+import { GlobalError } from "../../GlobalError/GlobalError";
 
 export const FeaturedProducts = () => {
-  const { data: products } = useGetProductsQuery();
+  const { data: products, isLoading } = useGetProductsQuery();
 
-  if (!products) return <Navigate to="/globalError" />;
+  if (!products && !isLoading) return <GlobalError />;
+  if (!products) return <GlobalError />;
 
   return (
     <section className={styles.featuredProducts}>

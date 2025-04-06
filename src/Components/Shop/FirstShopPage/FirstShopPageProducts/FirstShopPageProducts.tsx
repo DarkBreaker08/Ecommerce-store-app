@@ -18,11 +18,13 @@ import product14 from "../../../../assets/products/n6.jpg";
 import product15 from "../../../../assets/products/n7.jpg";
 import product16 from "../../../../assets/products/n8.jpg";
 import styles from "./styles.module.scss";
+import { GlobalError } from "../../../GlobalError/GlobalError";
 
 export const FirstShopPageProducts = () => {
-  const { data: products } = useGetProductsQuery();
+  const { data: products, isLoading } = useGetProductsQuery();
 
-  if (!products) return <Navigate to="/globalError" />;
+  if (!products && !isLoading) return <GlobalError />;
+  if (!products) return <Navigate to="." />;
 
   return (
     <section className={styles.featuredProducts}>

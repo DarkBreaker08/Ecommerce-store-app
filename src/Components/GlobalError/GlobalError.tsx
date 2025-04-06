@@ -1,13 +1,15 @@
-import { Footer } from "../GeneralComponents/Footer/Footer";
-import { Header } from "../GeneralComponents/Header/Header";
+import { Link } from "@tanstack/react-router";
 import styles from "./styles.module.scss";
 
 export const GlobalError = () => {
   return (
     <>
-      <Header />
-      <h2 className={styles.errorTitle}>Oops, something went wrong!</h2>
-      <Footer />
+      <section className={styles.error}>
+        <h2 className={styles.errorTitle}>Oops, something went wrong!</h2>
+        <Link to="." className={styles.tryAgain}>
+          Try Again
+        </Link>
+      </section>
     </>
   );
 };

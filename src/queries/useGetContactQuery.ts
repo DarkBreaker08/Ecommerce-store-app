@@ -5,7 +5,7 @@ import { Contact } from "../types";
 export const useGetContactQuery = () => {
   const { apiGet } = useApi();
 
-  const { data } = useQuery({
+  const { data, isLoading } = useQuery({
     queryKey: ["contact-data"],
     queryFn: async () => {
       return apiGet<Contact>("contact");
@@ -13,5 +13,5 @@ export const useGetContactQuery = () => {
     staleTime: 30000,
   });
 
-  return { data };
+  return { data, isLoading };
 };

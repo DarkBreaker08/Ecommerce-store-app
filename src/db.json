@@ -152,15 +152,22 @@
       "price": "$243.09",
       "name": "Product F",
       "brand": "addidas",
-      "quantity": 1,
+      "quantity": 2,
       "id": "6aeg"
     },
     {
       "price": "$109.23",
       "name": "Product D",
       "brand": "addidas",
-      "quantity": 1,
+      "quantity": 2,
       "id": "4aeg"
+    },
+    {
+      "price": "$203.32",
+      "name": "Product C",
+      "brand": "addidas",
+      "quantity": 2,
+      "id": "3aeg"
     }
   ]
 }

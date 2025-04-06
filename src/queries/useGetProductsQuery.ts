@@ -5,7 +5,7 @@ import { Products } from "../types";
 export const useGetProductsQuery = () => {
   const { apiGet } = useApi();
 
-  const { data } = useQuery({
+  const { data, isLoading } = useQuery({
     queryKey: ["products", "shop"],
     queryFn: async () => {
       return apiGet<Products>("products");
@@ -13,5 +13,5 @@ export const useGetProductsQuery = () => {
     staleTime: 30000,
   });
 
-  return { data };
+  return { data, isLoading };
 };

@@ -10,11 +10,13 @@ import product8 from "../../../assets/products/n8.jpg";
 import styles from "./styles.module.scss";
 import { useGetProductsQuery } from "../../../queries/useGetProductsQuery";
 import { Navigate } from "@tanstack/react-router";
+import { GlobalError } from "../../GlobalError/GlobalError";
 
 export const NewArrivals = () => {
-  const { data: products } = useGetProductsQuery();
+  const { data: products, isLoading } = useGetProductsQuery();
 
-  if (!products) return <Navigate to="/globalError" />;
+  if (!products && !isLoading) return <GlobalError />;
+  if (!products) return <Navigate to=".." />;
 
   return (
     <section className={styles.newArrivals}>

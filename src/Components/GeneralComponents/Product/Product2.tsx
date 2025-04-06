@@ -3,6 +3,7 @@ import { useCreateCartProductQuery } from "../../../queries/useCreateCartProduct
 import { useGetCartProductsQuery } from "../../../queries/useGetCartProductsQuery";
 import { Product as ProductObj } from "../../../types";
 import styles from "./styles.module.scss";
+import { GlobalError } from "../../GlobalError/GlobalError";
 
 type ProductProps = {
   productObject: ProductObj;
@@ -11,9 +12,10 @@ type ProductProps = {
 
 export const Product2 = ({ productObject, imgSource }: ProductProps) => {
   const { mutate } = useCreateCartProductQuery();
-  const { data } = useGetCartProductsQuery();
+  const { data, isLoading } = useGetCartProductsQuery();
 
-  if (!data) return <Navigate to="/globalError" />;
+  if (!data && !isLoading) return <GlobalError />;
+  if (!data) return <Navigate to="." />;
 
   const addProductToCart = () => {
     productObject.quantity = 1;
