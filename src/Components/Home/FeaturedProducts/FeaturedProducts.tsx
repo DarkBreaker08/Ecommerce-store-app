@@ -1,4 +1,3 @@
-import { Navigate } from "@tanstack/react-router";
 import product1 from "../../../assets/products/f1.jpg";
 import product2 from "../../../assets/products/f2.jpg";
 import product3 from "../../../assets/products/f3.jpg";
